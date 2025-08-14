@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "WeeklyBot Message Modifier",
+  "version": "1.0",
+  "description": "Modifies WeeklyBot messages to appear as if sent by the user.",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.twitch.tv/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
