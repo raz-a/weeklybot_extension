@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Extension Options</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 20px;
+      max-width: 400px;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin: 0 0 20px 0;
+      color: #333;
+      font-size: 18px;
+    }
+
+    .setting {
+      margin: 16px 0;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .setting:last-child {
+      border-bottom: none;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .checkbox-container {
+      position: relative;
+      margin-right: 12px;
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    input[type="checkbox"]:checked {
+      background: #4285f4;
+      border-color: #4285f4;
+    }
+
+    input[type="checkbox"]:checked::after {
+      content: '✓';
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      padding-left: 2px;
+      padding-top: 0px;
+    }
+
+    input[type="checkbox"]:hover {
+      border-color: #4285f4;
+    }
+
+    .setting-label {
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .setting-description {
+      font-size: 12px;
+      color: #777;
+      margin-left: 30px;
+    }
+
+    #status {
+      margin-top: 16px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    #status.show {
+      opacity: 1;
+    }
+
+    #status.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Extension Settings</h2>
+
+    <div class="setting">
+      <label>
+        <div class="checkbox-container">
+          <input type="checkbox" id="debugLog">
+        </div>
+        <div>
+          <div class="setting-label">Debug Logging</div>
+        </div>
+      </label>
+      <div class="setting-description">
+        Enable detailed console logging for debugging purposes
+      </div>
+    </div>
+
+    <div id="status"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,16 +1,23 @@
 {
   "manifest_version": 3,
-  "name": "WeeklyBot Message Modifier",
-  "version": "1.0",
-  "description": "Modifies WeeklyBot messages to appear as if sent by the user.",
+  "name": "WeeklyBot Enhanced Experience",
+  "version": "0.1.0",
+  "description": "Improves the WeeklyBot experience on Twitch.",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
+   "options_page": "options.html",
   "content_scripts": [
     {
       "matches": ["*://*.twitch.tv/*"],
       "js": ["content.js"],
       "run_at": "document_start"
     }
-  ]
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
 }
